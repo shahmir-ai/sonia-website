@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Dr. Sonia Kang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="page-container">
+
+        <header id="main-header">
+            <div class="container header-flex-container">
+                <div class="logo-area">
+                    <a href="index.html" class="logo-text">SONIA KANG</a>
+                </div>
+                <nav id="top-menu-nav">
+                    <ul id="top-menu" class="nav">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="lab.html">Lab</a></li>
+                        <li><a href="#">Podcast</a></li>
+                        <li><a href="#">Media</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li class="social-icon-item"><a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a></li>
+                        <li class="social-icon-item"><a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content" class="about-page-main-content">
+            <div class="about-image-column">
+                <img src="images/sonia2.jpg" alt="Dr. Sonia Kang">
+            </div>
+            <div class="about-text-column">
+                <h1 class="about-page-title animate-on-scroll">About Dr. Sonia Kang</h1>
+                <p class="animate-on-scroll">Dr. Sonia Kang holds the Canada Research Chair in Identity, Diversity, and Inclusion, and is a Professor of Organizational Behaviour and Human Resource Management at the University of Toronto, where she is also Academic Director at the Rotman School of Management's Institute for Gender and the Economy (GATE). Sonia earned a PhD in Social Psychology from the University of Toronto and completed a SSHRC Post-Doctoral Fellowship at Northwestern University. She was the host of the popular podcast, For the Love of Work, a playbook for the modern employee experience, and currently co-hosts GATE's podcast series, Busted, which teams up with leading experts to bust prominent myths about gender and the economy. You can find them both anywhere you usually get your podcasts.</p>
+                
+                <div class="highlight-item animate-on-scroll about-cv-link">
+                    <span class="highlight-icon"><i class="fas fa-arrow-down"></i></span>
+                    <div class="highlight-text-content">
+                        <h3><a href="#">Sonia's CV</a></h3>
+                    </div>
+                </div>
+
+                <p class="animate-on-scroll"><strong>Sonia's research explores the challenges and opportunities of identity, diversity, and inclusion. She takes a novel approach by harnessing the power of behavioral insights and organizational design to disrupt systems, processes, and structures that block the path toward diversity and inclusion for individuals, organizations, and society.</strong></p>
+                
+                <p class="animate-on-scroll">Some recent themes investigated in her research include diversity and inclusion in STEM and medicine; using choice architecture to eliminate the gender gap in competition; disclosure of designated group status under the Canadian Employment Equity Act; the effects of high and low power on performance; the interpretation of equality rights under the Canadian Constitution; the effectiveness of pro-diversity statements; and the decision to reveal or conceal race and gender cues when navigating the labor market. Sonia's research on "resume whitening" won two best paper awards and was recently ranked #3 on Financial Times' global top 100 list of "business school research with social impact."</p>
+                
+                <p class="animate-on-scroll">Sonia's research has been published widely in top-tier academic journals including Administrative Science Quarterly, Academy of Management Journal, The Lancet, the Journal of Personality and Social Psychology, Psychological Science, and Annual Review of Psychology, and is frequently featured in media outlets such as The Harvard Business Review, The Financial Times, Forbes, The Globe and Mail, The Guardian, The Atlantic, and on CBC Radio.</p>
+                
+                <p class="animate-on-scroll">Sonia is a sought-after speaker, consultant, and expert commentator with a unique ability to translate complex research findings into actionable and impactful insights. She is the host of For the Love of Work, a podcast that explores practical solutions to today's workplace challenges, touching on important and timely topics including resilience, values, diversity and inclusion, and psychological safety. Sonia was recently honored for her work with a 2021 Report on Business Changemakers Award.</p>
+                
+                <p class="animate-on-scroll">Sonia lives in Toronto with her husband and their two young sons.</p>
+            </div>
+        </main>
+
+        <footer id="main-footer">
+            <div class="container footer-flex">
+                <div class="footer-left-content">
+                    <div class="footer-logo-grid">
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo1.png" alt="Logo 1"></a></div>
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo2.png" alt="Logo 2"></a></div>
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo3.jpg" alt="Logo 3"></a></div>
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo4.jpg" alt="Logo 4"></a></div>
+                    </div>
+                </div>
+                <div class="footer-right-content">
+                    <div class="footer-social-icons-right">
+                        <a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p class="copyright animate-on-scroll">&copy; 2025 Sonia Kang</p>
+                </div>
+            </div>
+        </footer>
+    </div> <!-- #page-container -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('main-header');
+            const scrollTrigger = 50; 
+
+            function handleScroll() {
+                if (window.scrollY > scrollTrigger) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            }
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); 
+
+            // Carousel Logic (from index.html - might not be needed on about.html, but harmless)
+            const track = document.querySelector('.publications-carousel-track');
+            if (track) {
+                const items = Array.from(track.children);
+                if (items.length > 0) {
+                    const itemWidth = items[0].getBoundingClientRect().width;
+                    const viewport = document.querySelector('.publications-carousel-viewport');
+                    const prevButton = document.querySelector('.selected-publications-section .prev-arrow');
+                    const nextButton = document.querySelector('.selected-publications-section .next-arrow');
+                    
+                    let currentIndex = 0;
+                    const itemsToShow = 2; 
+                    const totalItems = items.length;
+
+                    function moveToSlide(index) {
+                        track.style.transform = 'translateX(-' + (index * itemWidth) + 'px)';
+                        currentIndex = index;
+                        updateArrowStates();
+                    }
+
+                    function updateArrowStates() {
+                        if (!prevButton || !nextButton) return;
+                        prevButton.disabled = currentIndex === 0;
+                        nextButton.disabled = currentIndex >= totalItems - itemsToShow;
+                    }
+
+                    if (nextButton) {
+                        nextButton.addEventListener('click', () => {
+                            if (currentIndex < totalItems - itemsToShow) {
+                                moveToSlide(currentIndex + 1);
+                            }
+                        });
+                    }
+
+                    if (prevButton) {
+                        prevButton.addEventListener('click', () => {
+                            if (currentIndex > 0) {
+                                moveToSlide(currentIndex - 1);
+                            }
+                        });
+                    }
+                    updateArrowStates();
+                }
+            }
+
+            // Scroll Animation Logic
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            if (animatedElements.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target); 
+                        }
+                    });
+                }, {
+                    threshold: 0.1 
+                });
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
