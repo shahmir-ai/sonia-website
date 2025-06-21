@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcasts | Dr. Sonia Kang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="page-container">
+
+        <header id="main-header">
+            <div class="container header-flex-container">
+                <div class="logo-area">
+                    <a href="index.html" class="logo-text">SONIA KANG</a>
+                </div>
+                <nav id="top-menu-nav">
+                    <ul id="top-menu" class="nav">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="lab.html">Lab</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="media.html">Media</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="social-icon-item"><a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a></li>
+                        <li class="social-icon-item"><a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content" class="podcast-page-main-content">
+            <div class="container page-container">
+                <div class="page-title-wrapper animate-on-scroll">
+                    <span class="page-title-animated-icon">✳</span>
+                    <h1 class="page-title">Podcasts</h1>
+                </div>
+
+                <hr class="section-divider animate-on-scroll">
+
+                <section class="podcast-entry-section animate-on-scroll">
+                    <div class="podcast-entry-header">
+                        <h2 class="podcast-entry-title">Busted</h2>
+                        <div class="podcast-entry-actions">
+                            <a href="#" class="action-btn" aria-label="Listen on Spotify" data-tooltip="Listen on Spotify"><img src="images/spotify.png" alt="Spotify icon"></a>
+                            <a href="#" class="action-btn" aria-label="Listen on Apple Podcasts" data-tooltip="Listen on Apple Podcasts"><img src="images/apple.png" alt="Apple Podcasts icon"></a>
+                            <a href="#" class="action-btn" aria-label="Listen on Amazon Music" data-tooltip="Listen on Amazon Music"><img src="images/amazon.png" alt="Amazon Music icon"></a>
+                        </div>
+                    </div>
+                    <p class="podcast-entry-description">
+                        Does achieving gender equality only benefit women? Are gender quotas thwarting meritocracy? Are women more risk averse than men? If you think you know the answers to these questions, then think again! Busted is an audio podcast series that busts prominent myths surrounding gender and the economy by teaming up with leading experts in the field. We uncover the origins of each myth and give you the tools to bust each myth yourself!  
+                    </p>
+                    <div class="podcast-entry-embed-widget">
+                        <iframe src="https://castbox.fm/app/castbox/player/id5075897?v=8.22.11&autoplay=0" frameborder="0" width="100%" height="500"></iframe>
+                    </div>
+                </section>
+
+                <hr class="section-divider animate-on-scroll">
+
+                <section class="podcast-entry-section animate-on-scroll">
+                    <div class="podcast-entry-header">
+                        <h2 class="podcast-entry-title">For the Love of Work</h2>
+                        <div class="podcast-entry-actions">
+                            <a href="#" class="action-btn" aria-label="Listen on Spotify" data-tooltip="Listen on Spotify"><img src="images/spotify.png" alt="Spotify icon"></a>
+                            <a href="#" class="action-btn" aria-label="Listen on Apple Podcasts" data-tooltip="Listen on Apple Podcasts"><img src="images/apple.png" alt="Apple Podcasts icon"></a>
+                            <a href="#" class="action-btn" aria-label="Listen on Amazon Music" data-tooltip="Listen on Amazon Music"><img src="images/amazon.png" alt="Amazon Music icon"></a>
+                        </div>
+                    </div>
+                    <p class="podcast-entry-description">
+                        Hosted by Dr. Sonia Kang and made possible by Rogers, this new podcast is a playbook for the modern employee experience, and it could not be more relevant as we redefine the way we work in the wake of a pandemic. Throughout the series you'll hear inspirational and practical advice from experts in the industry, and lessons to help you be your best self at work and beyond.
+                    </p>
+                    <div class="podcast-entry-embed-widget">
+                        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/ca/podcast/for-the-love-of-work/id1530443742"></iframe>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <footer id="main-footer">
+            <div class="container footer-flex">
+                <div class="footer-left-content">
+                    <div class="footer-logo-grid">
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo1.png" alt="Logo 1"></a></div>
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo2.png" alt="Logo 2"></a></div>
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo3.jpg" alt="Logo 3"></a></div>
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo4.jpg" alt="Logo 4"></a></div>
+                    </div>
+                </div>
+                <div class="footer-right-content">
+                    <div class="footer-social-icons-right">
+                        <a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p class="copyright animate-on-scroll">&copy; 2025 Sonia Kang</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('main-header');
+            const scrollTrigger = 50; 
+
+            function handleScroll() {
+                if (window.scrollY > scrollTrigger) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            }
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); 
+
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            if (animatedElements.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target); 
+                        }
+                    });
+                }, {
+                    threshold: 0.1 
+                });
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

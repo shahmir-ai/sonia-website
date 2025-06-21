@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Dr. Sonia Kang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="page-container">
+
+        <header id="main-header">
+            <div class="container header-flex-container">
+                <div class="logo-area">
+                    <a href="index.html" class="logo-text">SONIA KANG</a>
+                </div>
+                <nav id="top-menu-nav">
+                    <ul id="top-menu" class="nav">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="lab.html">Lab</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="media.html">Media</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="social-icon-item"><a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a></li>
+                        <li class="social-icon-item"><a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content" class="contact-page-main-content">
+            <div class="container page-container">
+                <div class="page-title-wrapper animate-on-scroll">
+                    <span class="page-title-animated-icon">✳</span>
+                    <h1 class="page-title">Contact Sonia</h1>
+                </div>
+                
+                <hr class="section-divider animate-on-scroll">
+
+                <div class="contact-content-section animate-on-scroll">
+                    <p>To contact Sonia for media inquiries, consulting opportunities, or speaking engagements, use the form below.</p>
+                    
+                    <div class="contact-form-container">
+                        <form action="#" method="POST" id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group form-group-name">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group form-group-email">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group form-group-topic">
+                                    <label for="topic">Topic</label>
+                                    <select id="topic" name="topic" required>
+                                        <option value="" disabled selected>Select a topic...</option>
+                                        <option value="media_inquiry">Media Inquiry</option>
+                                        <option value="consulting_opportunity">Consulting Opportunity</option>
+                                        <option value="speaking_engagement">Speaking Engagement</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group form-group-subject">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <div class="form-group form-submit-group">
+                                <a href="#" class="contact-submit-link animated-underline-link">
+                                    Send Message >
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+
+        <footer id="main-footer">
+            <div class="container footer-flex">
+                <div class="footer-left-content">
+                    <div class="footer-logo-grid">
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo1.png" alt="Logo 1"></a></div>
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo2.png" alt="Logo 2"></a></div>
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo3.jpg" alt="Logo 3"></a></div>
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo4.jpg" alt="Logo 4"></a></div>
+                    </div>
+                </div>
+                <div class="footer-right-content">
+                    <div class="footer-social-icons-right">
+                        <a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p class="copyright animate-on-scroll">&copy; 2025 Sonia Kang</p>
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- End #page-container -->
+
+    <script>
+        // Sticky Header
+        const header = document.getElementById('main-header');
+        const headerHeight = header.offsetHeight; // Get header height for offsetting content if needed, or use CSS var
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Adjust 50 to when you want the change to happen
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Scroll Animations
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        const observerOptions = {
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of the item is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observerInstance) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: unobserve after animation to save resources
+                    // observerInstance.unobserve(entry.target); 
+                } else {
+                    // Optional: remove class if you want animation to replay on scroll up
+                    // entry.target.classList.remove('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+
+
+
+        // Any other page-specific JS for contact.html (if needed in the future)
+        // For now, the form is a dud.
+
+    </script>
+</body>
+</html> 

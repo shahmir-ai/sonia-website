@@ -20,9 +20,9 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="publications.html">Publications</a></li>
                         <li><a href="lab.html">Lab</a></li>
-                        <li><a href="#">Podcast</a></li>
-                        <li><a href="#">Media</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="media.html">Media</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li class="social-icon-item"><a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a></li>
                         <li class="social-icon-item"><a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
                     </ul>
@@ -37,158 +37,498 @@
                     <h1 class="page-title">Selected Publications</h1>
                 </div>
 
-                <div class="tabs-nav-container animate-on-scroll">
-                    <ul class="tabs-nav">
-                        <li><a href="#papers" class="tab-link active" data-tab="papers">Papers</a></li>
-                        <li><a href="#books-chapters" class="tab-link" data-tab="books-chapters">Books & Chapters</a></li>
-                    </ul>
-                </div>
+                <!-- New Filter and Sort Bar -->
+                <div class="filter-sort-bar animate-on-scroll">
+                    <div class="filter-controls">
+                        <!-- Search Input -->
+                        <div class="filter-item filter-search">
+                            <input type="text" id="search-input" class="search-input" placeholder="Search by title, year, authors or journals">
+                            <i class="fas fa-search search-icon"></i>
+                        </div>
 
-                <div class="tabs-content-container">
-                    <div id="papers" class="tab-content active">
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Leaning in or not leaning out? Opt-out choice framing attenuates gender differences in the decision to compete</a></h4>
-                            <p class="pub-authors">He, J.C., Kang, S.K., & Lacetera, N.</p>
-                            <p class="pub-details">Harvard Kennedy School (Gender Action Portal), 2020</p>
+                        <!-- Content Type Filter -->
+                        <div class="filter-item">
+                            <select id="content-type-filter" class="filter-dropdown">
+                                <option value="all">All</option>
+                                <option value="papers" selected>Papers</option>
+                                <option value="books-chapters">Books & Chapters</option>
+                            </select>
                         </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Covering in Cover Letters: Gender and self-presentation in job applications</a></h4>
-                            <p class="pub-authors">He, J.C., & Kang, S.K.</p>
-                            <p class="pub-details">Academy of Management Journal, 2021</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Stereotypes at work: Occupational stereotypes predict race and gender segregation in the workforce</a></h4>
-                            <p class="pub-authors">He, J.C., Kang, S.K., Tse, K., & Toh, S.M.</p>
-                            <p class="pub-details">Journal of Vocational Behavior, 2019</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Working toward gender diversity and inclusion in medicine: Myths and solutions.</a></h4>
-                            <p class="pub-authors">Kang, S.K., & Kaplan, S.</p>
-                            <p class="pub-details">The Lancet, 2019</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">From ignorance to intolerance: Perceived intentionality of racial discrimination shapes preferences for colorblindness versus multiculturalism.</a></h4>
-                            <p class="pub-authors">Apfelbaum, E.P., Grunberg, R., Halevy, N., & Kang, S.K.</p>
-                            <p class="pub-details">Journal of Experimental Social Psychology, 2017</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Interpreting equality rights under Sections 7 and 15 in new and old ways: An empirical analysis of the concurrent claims approach</a></h4>
-                            <p class="pub-authors">Kang, K.K., & Kang, S.K.</p>
-                            <p class="pub-details">National Journal of Constitutional Law, 2016</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Mechanisms of identity conflict: Uncertainty, anxiety, and the behavioral inhibition system</a></h4>
-                            <p class="pub-authors">Hirsh, J.B., & Kang, S.K.</p>
-                            <p class="pub-details">Personality and Social Psychology Review, 2016</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">The unintended consequences of diversity statements.</a></h4>
-                            <p class="pub-authors">Kang, S.K., DeCelles, K.A., Tilcsik, A., & Jun, S.</p>
-                            <p class="pub-details">Harvard Business Review, 2016</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Whitened resumes: Race and self-presentation in the labor market</a></h4>
-                            <p class="pub-authors">Kang, S.K., DeCelles, K.A., Tilcsik, A., & Jun, S.</p>
-                            <p class="pub-details">Administrative Science Quarterly, 2016</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Folk beliefs about genetic variation predict avoidance of biracial individuals</a></h4>
-                            <p class="pub-authors">Kang, S.K., Plaks, J.E., & Remedios, J.R.</p>
-                            <p class="pub-details">Frontiers in Psychology: Personality and Social Psychology, 2015</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Multiple Identities in Social Perception and Interaction: Challenges and Opportunities.</a></h4>
-                            <p class="pub-authors">Kang, S.K., & Bodenhausen, G.V.B.</p>
-                            <p class="pub-details">Annual Review of Psychology, 2015</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Power Affects Performance When the Pressure is On: Evidence for Low-Power Threat and High-Power Lift</a></h4>
-                            <p class="pub-authors">Kang, S.K., Galinsky, A.D., Kray, L.J., & Shirako, A.</p>
-                            <p class="pub-details">Personality and Social Psychology Bulletin, 2015</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Comparing young and older adults' perceptions of conflicting stereotypes and multiply-categorizable individuals.</a></h4>
-                            <p class="pub-authors">Kang, S.K., Chasteen, A.L., Cadieux, J., Cary, L.A., & Syeda, M.</p>
-                            <p class="pub-details">Psychology and Aging, 2014</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Stereotype threat spillover: Why stereotype threat is more useful for organizations than it seems.</a></h4>
-                            <p class="pub-authors">Kang, S. K, & Inzlicht, M.</p>
-                            <p class="pub-details">Industrial and Organizational Psychology: Perspectives on Science and Practice, 2014</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Personalized Persuasion: Tailoring Persuasive Appeals to Recipient Personality Traits</a></h4>
-                            <p class="pub-authors">Hirsh, J. B., Kang, S. K., & Bodenhausen, G. V.</p>
-                            <p class="pub-details">Psychological Science, 2012</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Research-based advice on teaching children not to be racist</a></h4>
-                            <p class="pub-authors">Kang, S.K., & Apfelbaum, E.P.</p>
-                            <p class="pub-details">The Atlantic, 2012</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Stigma Building Blocks: How instruction and experience teach children about rejection by out-groups</a></h4>
-                            <p class="pub-authors">Kang, S.K., & Inzlicht, M.</p>
-                            <p class="pub-details">Personality and Social Psychology Bulletin, 2012</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Facing social identity change: Interactive effects of current and projected collective identification on expectations regarding future self-esteem and psychological well-being</a></h4>
-                            <p class="pub-authors">Packer, D., Chasteen, A.L., & Kang, S.K.</p>
-                            <p class="pub-details">British Journal of Social Psychology, 2011</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Lingering effects: Stereotype threat hurts more than you think</a></h4>
-                            <p class="pub-authors">Inzlicht, M., Tullet, A.M., Legault, L., & Kang, S.K.</p>
-                            <p class="pub-details">Social Issues and Policy Review, 2011</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Social Neuroscience and Public Policy on Intergroup Relations: A Hegelian Analysis</a></h4>
-                            <p class="pub-authors">Kang, S.K., Inzlicht, M, & Derks, B.</p>
-                            <p class="pub-details">Journal of Social Issues, 2010</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Stereotype threat spillover: How threats to social identity affect eating, decision-making, and aggression,</a></h4>
-                            <p class="pub-authors">Inzlicht, M., & Kang, S.K.</p>
-                            <p class="pub-details">Journal of Personality and Social Psychology, 2010</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Your mistakes are mine: Self-other overlap predicts neural response to observed errors</a></h4>
-                            <p class="pub-authors">Kang, S.K., Hirsh, J.B., & Chasteen, A.L.</p>
-                            <p class="pub-details">Journal of Experimental Social Psychology, 2010</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Beyond the double-jeopardy hypothesis: Assessing emotion on the faces of multiply categorizable targets of prejudice</a></h4>
-                            <p class="pub-authors">Kang, S.K., & Chasteen, A.L.</p>
-                            <p class="pub-details">Journal of Experimental Social Psychology, 2009</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">The development and validation of the age-based rejection sensitivity questionnaire (RSQ-Age)</a></h4>
-                            <p class="pub-authors">Kang, S.K., & Chasteen, A.L.</p>
-                            <p class="pub-details">The Gerontologist, 2009</p>
-                        </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">The moderating role of age-group identification and perceived threat on stereotype threat among older adults</a></h4>
-                            <p class="pub-authors">Kang, S.K., & Chasteen, A.L.</p>
-                            <p class="pub-details">International Journal of Aging and Human Development, 2009</p>
-                        </div>
-                         <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">The neuroscience of stigma and stereotype threat</a></h4>
-                            <p class="pub-authors">Derks, B., Inzlicht, M., & Kang, S.K.</p>
-                            <p class="pub-details">Group Processes and Intergroup Relations, </p>
+
+                        <!-- Sort Dropdown -->
+                        <div class="filter-item">
+                            <select id="sort-dropdown" class="filter-dropdown">
+                                <option value="featured" selected>Featured</option>
+                                <option value="title-asc">Title A-Z</option>
+                                <option value="title-desc">Title Z-A</option>
+                                <option value="year-desc">Year (Newest)</option>
+                                <option value="year-asc">Year (Oldest)</option>
+                            </select>
                         </div>
                     </div>
-                    <div id="books-chapters" class="tab-content">
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Social categorization and perceptions of social groups</a></h4>
+                </div>
+
+                <!-- No Results Message -->
+                <div id="no-results-message" class="no-results-message" style="display: none;">
+                    <div class="no-results-content">
+                        <h3>No results found</h3>
+                        <p>Try adjusting your search terms or filters.</p>
+                    </div>
+                </div>
+
+                <!-- Publications Content Container -->
+                <div class="publications-content-container">
+                    <!-- Papers Section -->
+                    <div class="publication-entry papers animate-on-scroll" data-year="2020">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Leaning in or not leaning out? Opt-out choice framing attenuates gender differences in the decision to compete</h4>
+                            <p class="pub-authors">He, J.C., Kang, S.K., & Lacetera, N.</p>
+                            <p class="pub-details">Harvard Kennedy School (Gender Action Portal), 2020</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2021">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Covering in Cover Letters: Gender and self-presentation in job applications</h4>
+                            <p class="pub-authors">He, J.C., & Kang, S.K.</p>
+                            <p class="pub-details">Academy of Management Journal, 2021</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2019">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Stereotypes at work: Occupational stereotypes predict race and gender segregation in the workforce</h4>
+                            <p class="pub-authors">He, J.C., Kang, S.K., Tse, K., & Toh, S.M.</p>
+                            <p class="pub-details">Journal of Vocational Behavior, 2019</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2019">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Working toward gender diversity and inclusion in medicine: Myths and solutions.</h4>
+                            <p class="pub-authors">Kang, S.K., & Kaplan, S.</p>
+                            <p class="pub-details">The Lancet, 2019</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2017">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>From ignorance to intolerance: Perceived intentionality of racial discrimination shapes preferences for colorblindness versus multiculturalism.</h4>
+                            <p class="pub-authors">Apfelbaum, E.P., Grunberg, R., Halevy, N., & Kang, S.K.</p>
+                            <p class="pub-details">Journal of Experimental Social Psychology, 2017</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2016">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Interpreting equality rights under Sections 7 and 15 in new and old ways: An empirical analysis of the concurrent claims approach</h4>
+                                <p class="pub-authors">Kang, K.K., & Kang, S.K.</p>
+                                <p class="pub-details">National Journal of Constitutional Law, 2016</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2016">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Mechanisms of identity conflict: Uncertainty, anxiety, and the behavioral inhibition system</h4>
+                                <p class="pub-authors">Hirsh, J.B., & Kang, S.K.</p>
+                                <p class="pub-details">Personality and Social Psychology Review, 2016</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2016">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>The unintended consequences of diversity statements.</h4>
+                                <p class="pub-authors">Kang, S.K., DeCelles, K.A., Tilcsik, A., & Jun, S.</p>
+                                <p class="pub-details">Harvard Business Review, 2016</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2016">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Whitened resumes: Race and self-presentation in the labor market</h4>
+                                <p class="pub-authors">Kang, S.K., DeCelles, K.A., Tilcsik, A., & Jun, S.</p>
+                                <p class="pub-details">Administrative Science Quarterly, 2016</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2015">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Folk beliefs about genetic variation predict avoidance of biracial individuals</h4>
+                                <p class="pub-authors">Kang, S.K., Plaks, J.E., & Remedios, J.R.</p>
+                                <p class="pub-details">Frontiers in Psychology: Personality and Social Psychology, 2015</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2015">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Multiple Identities in Social Perception and Interaction: Challenges and Opportunities.</h4>
+                            <p class="pub-authors">Kang, S.K., & Bodenhausen, G.V.B.</p>
+                            <p class="pub-details">Annual Review of Psychology, 2015</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2015">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Power Affects Performance When the Pressure is On: Evidence for Low-Power Threat and High-Power Lift</h4>
+                            <p class="pub-authors">Kang, S.K., Galinsky, A.D., Kray, L.J., & Shirako, A.</p>
+                            <p class="pub-details">Personality and Social Psychology Bulletin, 2015</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2014">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Comparing young and older adults' perceptions of conflicting stereotypes and multiply-categorizable individuals.</h4>
+                            <p class="pub-authors">Kang, S.K., Chasteen, A.L., Cadieux, J., Cary, L.A., & Syeda, M.</p>
+                            <p class="pub-details">Psychology and Aging, 2014</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2014">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Stereotype threat spillover: Why stereotype threat is more useful for organizations than it seems.</h4>
+                            <p class="pub-authors">Kang, S. K, & Inzlicht, M.</p>
+                            <p class="pub-details">Industrial and Organizational Psychology: Perspectives on Science and Practice, 2014</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2012">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Personalized Persuasion: Tailoring Persuasive Appeals to Recipient Personality Traits</h4>
+                            <p class="pub-authors">Hirsh, J. B., Kang, S. K., & Bodenhausen, G. V.</p>
+                            <p class="pub-details">Psychological Science, 2012</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2012">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Research-based advice on teaching children not to be racist</h4>
+                            <p class="pub-authors">Kang, S.K., & Apfelbaum, E.P.</p>
+                            <p class="pub-details">The Atlantic, 2012</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2012">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Stigma Building Blocks: How instruction and experience teach children about rejection by out-groups</h4>
+                            <p class="pub-authors">Kang, S.K., & Inzlicht, M.</p>
+                            <p class="pub-details">Personality and Social Psychology Bulletin, 2012</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2011">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Facing social identity change: Interactive effects of current and projected collective identification on expectations regarding future self-esteem and psychological well-being</h4>
+                            <p class="pub-authors">Packer, D., Chasteen, A.L., & Kang, S.K.</p>
+                            <p class="pub-details">British Journal of Social Psychology, 2011</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2011">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Lingering effects: Stereotype threat hurts more than you think</h4>
+                            <p class="pub-authors">Inzlicht, M., Tullet, A.M., Legault, L., & Kang, S.K.</p>
+                            <p class="pub-details">Social Issues and Policy Review, 2011</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2010">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Social Neuroscience and Public Policy on Intergroup Relations: A Hegelian Analysis</h4>
+                            <p class="pub-authors">Kang, S.K., Inzlicht, M, & Derks, B.</p>
+                            <p class="pub-details">Journal of Social Issues, 2010</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2010">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Stereotype threat spillover: How threats to social identity affect eating, decision-making, and aggression,</h4>
+                            <p class="pub-authors">Inzlicht, M., & Kang, S.K.</p>
+                            <p class="pub-details">Journal of Personality and Social Psychology, 2010</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2010">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Your mistakes are mine: Self-other overlap predicts neural response to observed errors</h4>
+                            <p class="pub-authors">Kang, S.K., Hirsh, J.B., & Chasteen, A.L.</p>
+                            <p class="pub-details">Journal of Experimental Social Psychology, 2010</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2009">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Beyond the double-jeopardy hypothesis: Assessing emotion on the faces of multiply categorizable targets of prejudice</h4>
+                            <p class="pub-authors">Kang, S.K., & Chasteen, A.L.</p>
+                            <p class="pub-details">Journal of Experimental Social Psychology, 2009</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2009">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>The development and validation of the age-based rejection sensitivity questionnaire (RSQ-Age)</h4>
+                            <p class="pub-authors">Kang, S.K., & Chasteen, A.L.</p>
+                            <p class="pub-details">The Gerontologist, 2009</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2009">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>The moderating role of age-group identification and perceived threat on stereotype threat among older adults</h4>
+                            <p class="pub-authors">Kang, S.K., & Chasteen, A.L.</p>
+                            <p class="pub-details">International Journal of Aging and Human Development, 2009</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-entry papers animate-on-scroll" data-year="2009">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>The neuroscience of stigma and stereotype threat</h4>
+                            <p class="pub-authors">Derks, B., Inzlicht, M., & Kang, S.K.</p>
+                            <p class="pub-details">Group Processes and Intergroup Relations, </p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF" data-tooltip="Download PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF" data-tooltip="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted" data-tooltip="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI" data-tooltip="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                     
+                     <!-- Books & Chapters Section -->
+                     <div class="publication-entry books-chapters animate-on-scroll" data-year="2012">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Social categorization and perceptions of social groups</h4>
                             <p class="pub-authors">Bodenhausen, G.V., Kang, S.K., & Peery, D.</p>
                             <p class="pub-book-details">In S.T. Fiske & C.N. Macrae (Eds.), The Sage Handbook of Social Cognition.</p>
                             <p class="pub-details">Issue:Thousand Oaks, CA: Sage. 2012. Pages: 318-336</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
                         </div>
-                        <div class="publication-entry animate-on-scroll">
-                            <h4><a href="#">Aging and stereotype threat: Development, Process, and Interventions</a></h4>
+                     </div>
+                     <div class="publication-entry books-chapters animate-on-scroll" data-year="2011">
+                        <div class="publication-entry-inner-layout">
+                            <div class="publication-content">
+                                <h4>Aging and stereotype threat: Development, Process, and Interventions</h4>
                             <p class="pub-authors">Chasteen, A.L., Kang, S.K., & Remedios, J.D.</p>
                             <p class="pub-book-details">In M. Inzlicht & T. Schmader (Eds.), Stereotype Threat: Theory, Process, and Application. </p>
                             <p class="pub-details">Oxford, UK: Oxford University Press. 2011. Pages: 202-216</p>
+                            </div>
+                            <div class="publication-divider"></div>
+                            <div class="publication-actions">
+                                <a href="#" class="action-btn" aria-label="PDF"><img src="images/pdf.png" alt="PDF icon"></a>
+                                <a href="#" class="action-btn" aria-label="OSF"><img src="images/osf.png" alt="OSF icon"></a>
+                                <a href="#" class="action-btn" aria-label="AsPredicted"><img src="images/ap.png" alt="AsPredicted icon"></a>
+                                <a href="#" class="action-btn" aria-label="DOI"><img src="images/doi.png" alt="DOI icon"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -260,22 +600,128 @@
                 });
             }
 
-            // Tab switching logic
-            const tabLinks = document.querySelectorAll('.tabs-nav .tab-link');
-            const tabContents = document.querySelectorAll('.tabs-content-container .tab-content');
+            // Filter and Sort Logic
+            const contentTypeFilter = document.getElementById('content-type-filter');
+            const searchInput = document.getElementById('search-input');
+            const sortDropdown = document.getElementById('sort-dropdown');
+            const noResultsMessage = document.getElementById('no-results-message');
+            const publicationsContainer = document.querySelector('.publications-content-container');
+            const allPublications = document.querySelectorAll('.publication-entry');
 
-            tabLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const targetTab = this.getAttribute('data-tab');
+            let originalOrder = Array.from(allPublications);
 
-                    tabLinks.forEach(l => l.classList.remove('active'));
-                    tabContents.forEach(c => c.classList.remove('active'));
+            // Initialize - show only papers by default
+            filterAndSort();
 
-                    this.classList.add('active');
-                    document.getElementById(targetTab).classList.add('active');
+            // Content Type Filter
+            contentTypeFilter.addEventListener('change', filterAndSort);
+
+            // Search Input
+            searchInput.addEventListener('input', filterAndSort);
+
+            // Sort Dropdown
+            sortDropdown.addEventListener('change', filterAndSort);
+
+            function filterAndSort() {
+                const contentType = contentTypeFilter.value;
+                const searchTerm = searchInput.value.toLowerCase();
+                let visiblePublications = [];
+
+                // Filter by content type and search term
+                allPublications.forEach(pub => {
+                    let showPublication = true;
+
+                    // Content type filter
+                    if (contentType === 'papers' && !pub.classList.contains('papers')) {
+                        showPublication = false;
+                    } else if (contentType === 'books-chapters' && !pub.classList.contains('books-chapters')) {
+                        showPublication = false;
+                    }
+
+                    // Search filter
+                    if (searchTerm && showPublication) {
+                        const title = pub.querySelector('h4').textContent.toLowerCase();
+                        const authors = pub.querySelector('.pub-authors').textContent.toLowerCase();
+                        const details = pub.querySelector('.pub-details').textContent.toLowerCase();
+                        const bookDetails = pub.querySelector('.pub-book-details');
+                        const bookDetailsText = bookDetails ? bookDetails.textContent.toLowerCase() : '';
+                        
+                        const searchableText = `${title} ${authors} ${details} ${bookDetailsText}`;
+                        
+                        if (!searchableText.includes(searchTerm)) {
+                            showPublication = false;
+                        }
+                    }
+
+                    if (showPublication) {
+                        visiblePublications.push(pub);
+                        pub.style.display = '';
+                    } else {
+                        pub.style.display = 'none';
+                    }
                 });
-            });
+
+                // Sort visible publications
+                sortPublications(visiblePublications);
+
+                // Show/hide no results message
+                if (visiblePublications.length === 0) {
+                    noResultsMessage.style.display = 'block';
+                    publicationsContainer.style.display = 'none';
+                } else {
+                    noResultsMessage.style.display = 'none';
+                    publicationsContainer.style.display = 'block';
+                }
+            }
+
+            function sortPublications(publications) {
+                const container = document.querySelector('.publications-content-container');
+                const currentSortType = sortDropdown.value;
+                
+                let sortedPublications = [...publications];
+
+                switch (currentSortType) {
+                    case 'featured':
+                        // Maintain original order
+                        sortedPublications = originalOrder.filter(pub => publications.includes(pub));
+                        break;
+                    case 'title-asc':
+                        sortedPublications.sort((a, b) => {
+                            const titleA = a.querySelector('h4').textContent.toLowerCase();
+                            const titleB = b.querySelector('h4').textContent.toLowerCase();
+                            return titleA.localeCompare(titleB);
+                        });
+                        break;
+                    case 'title-desc':
+                        sortedPublications.sort((a, b) => {
+                            const titleA = a.querySelector('h4').textContent.toLowerCase();
+                            const titleB = b.querySelector('h4').textContent.toLowerCase();
+                            return titleB.localeCompare(titleA);
+                        });
+                        break;
+                    case 'year-desc':
+                        sortedPublications.sort((a, b) => {
+                            const yearA = parseInt(a.getAttribute('data-year')) || 0;
+                            const yearB = parseInt(b.getAttribute('data-year')) || 0;
+                            return yearB - yearA;
+                        });
+                        break;
+                    case 'year-asc':
+                        sortedPublications.sort((a, b) => {
+                            const yearA = parseInt(a.getAttribute('data-year')) || 0;
+                            const yearB = parseInt(b.getAttribute('data-year')) || 0;
+                            return yearA - yearB;
+                });
+                        break;
+                }
+
+                // Reorder in DOM
+                sortedPublications.forEach(pub => {
+                    container.appendChild(pub);
+                });
+            }
+
+
         });
     </script>
 </body>

@@ -206,13 +206,16 @@ ul {
 
 .hero-section-hb .container.hero-content-flex {
     display: flex;
-    gap: 50px; 
+    gap: 50px;
     max-width: 1200px; /* Wider container */
+    margin-left: 5vw; /* Move block to the left */
+    margin-right: auto; /* Adjust right margin automatically */
+    /* It still inherits padding: 0 15px from .container */
 }
 
 .hero-text-content {
     flex: 1.2; /* Give slightly more space to text */
-    padding-left: 30px; /* Add padding now that text is on the right */
+    padding-left: 10px; /* REDUCED padding to move text closer to image */
     padding-bottom: 0; /* Ensuring no extra padding at the bottom */
     align-self: center; /* ADD THIS to vertically center the text */
 }
@@ -924,29 +927,24 @@ img {
 }
 
 .podcast-section .container {
-    max-width: 800px; /* Slightly narrower container for focused content */
-    text-align: center; /* Center align content within this section */
+    max-width: 1100px; /* Wider container for two columns */
+    /* text-align: center; Removed, column content will be left-aligned */
     position: relative; /* Ensure container content is above the ::before pseudo-element */
     z-index: 1; /* Explicitly stack above the pseudo-element if needed, though -1 on pseudo often suffices */
 }
 
-.podcast-section-title {
-    font-size: 2em; /* Similar to other section titles */
-    margin-bottom: 20px;
-}
-
-.podcast-section-title a.animated-underline-link {
-    font-size: 1em; /* Override if animated-underline-link sets its own size */
-    /* The animated-underline-link class already defines color and text-decoration */
-}
+/* Removed .podcast-section-title and its child 'a' styles as they are no longer used.
+   The main section title is now .section-heading,
+   and individual podcast titles are .podcast-column .podcast-title
+*/
 
 .podcast-description {
     font-size: 1em; /* Or 0.95em for slightly smaller */
     line-height: 1.7;
     margin-bottom: 30px;
     color: #000000; /* Ensure black text on the brown background */
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto; Removed for left alignment within columns */
+    /* margin-right: auto; Removed for left alignment within columns */
 }
 
 .podcast-embed-widget {
@@ -1051,64 +1049,214 @@ img {
     margin: 0; /* Remove default H1 margins to let wrapper control spacing */
 }
 
-.tabs-nav-container {
-    display: flex;
-    justify-content: center;
+.filter-sort-bar {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
     margin-bottom: 40px;
 }
 
-.tabs-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.filter-controls {
     display: flex;
-    border-bottom: 2px solid #eee; /* Light underline for the tab bar */
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
-.tabs-nav li {
-    margin: 0;
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.tabs-nav .tab-link {
-    display: block;
-    padding: 10px 25px;
-    text-decoration: none;
-    color: #555; /* Default tab color */
+.filter-item label {
     font-weight: 600;
-    font-size: 1.1em;
-    border-bottom: 3px solid transparent; /* For active state indicator */
-    margin-bottom: -2px; /* Align with parent border-bottom */
-    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    font-size: 0.9em;
+    color: #333;
+    white-space: nowrap;
 }
 
-.tabs-nav .tab-link:hover {
-    color: #000;
+.filter-dropdown,
+.search-input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tabs-nav .tab-link.active {
-    color: #000000; /* Active tab text color */
-    /* border-bottom-color: #D95A44; */ /* Accent color for active tab underline - OLD */
-    border-bottom-color: #D2C8BA; /* NEW: Header brown for active tab underline */
+.filter-dropdown:focus,
+.search-input:focus {
+    outline: none;
+    border-color: #D2C8BA;
+    box-shadow: 0 0 0 2px rgba(210, 200, 186, 0.2);
 }
 
-.tab-content {
-    display: none; /* Hide inactive tabs by default */
+.filter-dropdown {
+    min-width: 140px;
+    cursor: pointer;
 }
 
-.tab-content.active {
-    display: block; /* Show active tab content */
+.filter-search {
+    position: relative;
+    flex: 1; /* Take up all remaining space */
+    min-width: 200px; /* Minimum width to prevent it from getting too small */
 }
 
+.search-input {
+    width: 100%;
+    padding-right: 35px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+}
+
+.publications-content-container {
+    /* Container for all publications */
+}
+
+.no-results-message {
+    text-align: center;
+    padding: 60px 20px;
+    margin: 40px 0;
+}
+
+.no-results-content {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.no-results-content i {
+    font-size: 3em;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.no-results-content h3 {
+    font-size: 1.5em;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.no-results-content p {
+    color: #888;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* START NEW APPROACH: INNER FLEX WRAPPER (LESS AGGRESSIVE) */
 .publication-entry {
     margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #f0f0f0; /* Light separator for entries */
+    padding: 0; 
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .publication-entry:last-child {
     margin-bottom: 0;
     border-bottom: none;
 }
+
+.publication-entry-inner-layout {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0; 
+}
+
+.publication-content {
+    flex: 1 1 0%; 
+    min-width: 0; 
+    padding-right: 20px; 
+}
+
+.publication-divider {
+    flex: 0 0 1px; 
+    background-color: #f0f0f0 !important; /* Keep !important for visibility if needed */
+    margin: 0 20px; 
+}
+
+.publication-actions {
+    flex: 0 0 auto; 
+    display: grid; 
+    grid-template-columns: repeat(2, auto); 
+    grid-template-rows: repeat(2, auto);    
+    align-items: center; 
+    justify-items: center; 
+    column-gap: 8px; /* Horizontal gap */
+    row-gap: 4px;    /* Vertical gap - REDUCED */
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;  /* INCREASED SIZE */
+    height: 40px; /* INCREASED SIZE */
+    border: 1px solid #E8E5DF;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #8B7355;
+    text-decoration: none;
+    /* font-size will be overridden by img if using img tags */
+    transition: all 0.3s ease;
+}
+
+.action-btn img {
+    width: 22px;  /* Adjusted icon size */
+    height: 22px; /* Adjusted icon size */
+}
+
+/* Tooltip Styles */
+.action-btn {
+    position: relative; /* Needed for absolute positioning of the tooltip */
+}
+
+.action-btn::after {
+    content: attr(data-tooltip); /* Get text from data-tooltip attribute */
+    position: absolute;
+    bottom: 100%; /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 8px; /* Space between button and tooltip */
+    background-color: #D2C8BA; /* New background: Header color */
+    color: #000000; /* New text color: Black for contrast */
+    padding: 6px 10px; /* Padding inside the tooltip */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 0.85em; /* Slightly smaller text */
+    white-space: nowrap; /* Prevent tooltip text from wrapping */
+    z-index: 100; /* Ensure tooltip is on top */
+    visibility: hidden; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    pointer-events: none; /* Tooltip itself shouldn't be interactive */
+}
+
+.action-btn:hover::after {
+    visibility: visible; /* Show on hover */
+    opacity: 1;
+}
+
+.action-btn:hover {
+    background-color: #D2C8BA;
+    border-color: #D2C8BA;
+    transform: translateY(-2px);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+}
+/* END NEW APPROACH: INNER FLEX WRAPPER (LESS AGGRESSIVE) */
 
 .publication-entry h4 {
     font-size: 1.2em; /* Publication title size */
@@ -1117,29 +1265,7 @@ img {
     margin-bottom: 8px;
 }
 
-/* Styling for the title link within h4 */
-.publication-entry h4 a {
-    text-decoration: none;
-    color: inherit; /* Inherit black color from h4 */
-    position: relative;
-    display: inline-block; /* Important for underline placement */
-    padding-bottom: 2px; /* Space for the underline */
-}
-
-.publication-entry h4 a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px; /* Underline thickness */
-    bottom: 0; /* Position at the bottom of the padding */
-    left: 0;
-    background-color: #000000; /* Underline color */
-    transition: width 0.3s ease-in-out;
-}
-
-.publication-entry h4 a:hover::after {
-    width: 100%;
-}
+/* Title styling - no longer links */
 
 /* Remove or adjust generic p styling within publication-entry if it conflicts */
 .publication-entry p { /* This will be overridden by more specific classes below */
@@ -1172,6 +1298,53 @@ img {
     line-height: 1.5;
     margin-bottom: 4px; /* Space between book details and publisher line */
     font-weight: normal;
+}
+
+/* Responsive design for filter bar */
+@media (max-width: 767px) {
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .filter-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+    
+    .filter-search {
+        max-width: none;
+    }
+
+    /* Responsive layout for publications */
+    .publication-entry-inner-layout { /* UPDATED TO TARGET INNER LAYOUT */
+        flex-direction: column;
+        gap: 15px;
+        min-height: auto;
+        padding: 20px; /* Adjust padding for mobile stacked view */
+    }
+    
+    .publication-content { /* Ensure content takes full width in mobile stacked view */
+        flex: 1 1 100%; /* Allow it to take full width */
+        width: 100%;
+        padding-right: 0; /* No right padding needed when stacked */
+    }
+    
+    .publication-divider { /* Divider becomes horizontal */
+        height: 1px;
+        width: 100%;
+        margin: 15px 0;
+        background-color: #f0f0f0 !important; /* Keep for visibility */
+        flex-basis: 1px;
+    }
+    
+    .publication-actions { 
+        column-gap: 8px;
+        row-gap: 4px; /* Ensure consistent reduced gap on mobile */
+        padding-top: 0;
+    }
 }
 
 /* Lab Page Styles */
@@ -1472,5 +1645,427 @@ img {
 /* It will inherit all styles from .team-member-modal. */
 /* No specific styles needed for .research-assistant-modal unless overrides are required. */
 
+/* Research Assistant Modals */
+.research-assistant-modal {
+    /* Inherits from .team-member-modal */
+}
 
-/* ... potentially other styles ... */ 
+/* Media Page Specific Styles */
+.media-page-main-content .page-container {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    max-width: 99.5%; /* MODIFIED: Almost full width */
+    padding-left: 0.25%; /* MODIFIED: Minimal left padding */
+    padding-right: 0.25%; /* MODIFIED: Minimal right padding */
+}
+
+.media-gallery-container {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed: space-around, center */
+    gap: 20px; /* Space between images */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-top: 40px; /* Space below the divider */
+}
+
+.media-image-item {
+    flex: 1 1 calc(33.333% - 20px); 
+    box-sizing: border-box;
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 8px; /* Apply border-radius to the container for consistent clipping */
+}
+
+.media-image-item img {
+    width: 100%;
+    aspect-ratio: 460 / 590;
+    object-fit: cover; 
+    display: block; 
+    /* border-radius: 8px; /* Apply to container for consistent clipping */
+    transition: transform 0.6s ease-in-out, filter 0.6s ease-in-out; /* Slower transition */
+}
+
+.media-image-item:hover img {
+    transform: scale(1.1); /* Increased zoom to 10% */
+    filter: blur(10px) brightness(0.7); /* Blur and darken the image on hover */
+}
+
+.media-text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background-color: rgba(0, 0, 0, 0.15); /* REMOVED */
+    color: #FFFFFF; 
+    padding: 25px 15px 15px 15px; /* MODIFIED: Reduced bottom padding */
+    text-align: center;
+    border-bottom-left-radius: 8px; 
+    border-bottom-right-radius: 8px; 
+    /* REMOVED mask-image property */
+    /* REMOVED -webkit-mask-image property */
+    transition: transform 0.6s ease-in-out; 
+}
+
+.media-text-overlay::before {
+    content: '';
+    position: absolute;
+    bottom: -50px; /* MODIFIED: Extend below the image boundary */
+    left: 0;
+    right: 0;
+    height: 200px; /* MODIFIED: Made taller to cover behind top of headline text */
+    backdrop-filter: blur(10px); /* Back to blur now that z-index is correct */
+    mask-image: linear-gradient(to top, black 60%, transparent 100%); /* REVERTED: Back to only top fade */
+    -webkit-mask-image: linear-gradient(to top, black 60%, transparent 100%); /* REVERTED: Back to only top fade */
+    z-index: 1; /* Between image and text */
+    border-bottom-left-radius: 8px; 
+    border-bottom-right-radius: 8px;
+    opacity: 1; /* Visible by default */
+    transition: opacity 0.6s ease-in-out;
+}
+
+.media-text-overlay::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; /* Extend below the image boundary */
+    left: 0;
+    right: 0;
+    height: 200px; /* Same height as the blur pseudo-element */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%); /* Dark gradient background */
+    z-index: 0; /* Behind the blur pseudo-element but above the image */
+    border-bottom-left-radius: 8px; 
+    border-bottom-right-radius: 8px;
+    opacity: 1; /* Visible by default */
+    transition: opacity 0.6s ease-in-out;
+}
+
+.media-image-item:hover .media-text-overlay::before {
+    opacity: 0; /* Hide the localized blur on hover since whole image will be blurred */
+}
+
+.media-image-item:hover .media-text-overlay::after {
+    opacity: 0; /* Hide the dark background on hover since whole image will be blurred */
+}
+
+.media-image-item:hover .media-text-overlay {
+    transform: translateY(-45px); /* Move overlay up to make space for button */
+}
+
+.media-headline {
+    font-size: 1.1em; /* Adjust as needed */
+    font-weight: bold;
+    margin: 0 0 5px 0; /* No top/LR margin, small bottom margin */
+    line-height: 1.3;
+    color: #FFFFFF; /* Explicitly set headline text to white */
+    position: relative; /* ADDED: For z-index to work */
+    z-index: 2; /* ADDED: Ensure headline is above the ::before pseudo-element */
+}
+
+.media-subtext {
+    font-size: 0.85em; 
+    color: #E0E0E0; 
+    margin: 0 0 0 0; /* MODIFIED: Initially margin-bottom is 0 */
+    line-height: 1.4;
+    opacity: 0; /* Initially hidden */
+    max-height: 0; /* ADDED: Initially takes no space */
+    overflow: hidden; /* ADDED: For max-height animation */
+    transform: translateY(20px); /* Initially lower */
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out, margin-bottom 0.6s ease-in-out, max-height 0.6s ease-in-out; /* MODIFIED: Added max-height to transition */
+}
+
+.media-read-button {
+    display: inline-block; /* Remains, but position:absolute overrides some behavior */
+    position: absolute; /* ADDED */
+    bottom: 15px; /* ADDED: Final position from bottom of overlay */
+    left: 50%; /* ADDED: For horizontal centering */
+    padding: 10px 25px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-radius: 50px; /* Capsule shape */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-align: center;
+    opacity: 0; /* Hidden initially */
+    transform: translateX(-50%) translateY(30px); /* MODIFIED: Centered and starts further down */
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    cursor: pointer;
+    z-index: 3; /* ADDED: Ensure button is above the blur pseudo-element */
+}
+
+.media-image-item:hover .media-read-button {
+    opacity: 1; /* Fade in */
+    transform: translateX(-50%) translateY(35px); /* MODIFIED: End position is 35px lower */
+}
+
+.media-read-button:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.media-image-item:hover .media-subtext { /* Styles for subtext on hover */
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide to final position */
+    margin-bottom: 15px; /* Restore margin-bottom on hover */
+    max-height: 5em; /* ADDED: Expand to fit content */
+}
+
+/* Podcast Page Specific Styles */
+.podcast-page-main-content .page-container {
+    padding-top: 20px; /* Adjusted from 40px to reduce space after main title */
+    padding-bottom: 60px;
+}
+
+.podcast-entry-section {
+    margin-bottom: 50px; /* Space below each podcast entry, before the next divider or footer */
+    padding: 0 15px; /* Add some horizontal padding if container doesn't provide enough */
+}
+
+.podcast-entry-section:last-of-type {
+    margin-bottom: 0; /* No bottom margin for the very last podcast entry */
+}
+
+.podcast-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically align title and buttons */
+    margin-bottom: 15px; /* Space between header and description */
+}
+
+.podcast-entry-actions {
+    display: flex;
+    gap: 10px; /* Space between action buttons */
+}
+
+.podcast-entry-title {
+    font-size: 2em; /* Increased font size */
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 0; /* Margin now handled by podcast-entry-header */
+    /* text-align: left; Will be left-aligned by flex default */
+}
+
+.podcast-entry-description {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #333333;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.podcast-entry-embed-widget {
+    margin-top: 20px; /* Space above the embed widget */
+    /* Ensure iframe scales nicely */
+}
+
+.podcast-entry-embed-widget iframe {
+    max-width: 100%; /* Ensure iframe is responsive */
+    border-radius: 8px; /* Optional: match other rounded corners */
+}
+
+/* Contact Page Specific Styles */
+.contact-page-main-content .page-container {
+    padding-top: 40px; /* Space below header */
+    padding-bottom: 60px;
+}
+
+.contact-form-container {
+    max-width: none; /* Form uses full width of the container */
+    margin: 0; /* No margins needed */
+    padding: 0; /* No padding needed */
+    /* background-color: #f9f9f9; */ /* Optional: light background for the form area */
+    /* border-radius: 8px; */ /* Optional: rounded corners for the form area */
+}
+
+.contact-form-container p {
+    margin-bottom: 25px;
+    font-size: 1.05em;
+    text-align: left;
+}
+
+#contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #333;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea,
+#contact-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Cera Pro', sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    background-color: #fff;
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus,
+#contact-form select:focus {
+    border-color: #D2C8BA; /* Highlight color similar to header/theme */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(210, 200, 186, 0.3);
+}
+
+#contact-form textarea {
+    resize: vertical; /* Allow vertical resizing, disable horizontal */
+}
+
+/* New styles for single-column contact layout */
+.contact-content-section {
+    max-width: 900px; /* Increased width for better form spacing */
+    margin: 0 auto 40px auto; /* Center and add bottom margin */
+}
+
+.contact-content-section p {
+    margin-bottom: 30px; /* Space between intro text and form */
+    font-size: 1.1em;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* Adjustments for the existing contact-form-container are now for when it's in contact-text-column, which is no longer the case. */
+/* .contact-text-column .contact-form-container { ... } - This rule is no longer needed as form container is separate */
+
+/* New styles for the standalone form section */
+.contact-form-section {
+    padding-top: 20px; /* ADJUSTED: Reduced space above the form */
+    /* The animate-on-scroll class is already on the HTML element */
+}
+
+/* Re-apply styles to contact-form-container for when it's standalone */
+.contact-form-section .contact-form-container {
+    max-width: 100%; /* ADJUSTED: Form container spans full available width */
+    margin: 0; /* ADJUSTED: Remove auto horizontal margins */
+    padding: 0; /* ADJUSTED: Padding will be handled by parent or form elements directly */
+    /* background-color: #f9f9f9; */ /* Optional: light background for the form area */
+    /* border-radius: 8px; */ /* Optional: rounded corners for the form area */
+}
+
+/* Ensure the <p> tags within the new .contact-text-column are styled (if they lost styling) */
+.contact-text-column p {
+    margin-bottom: 1em; /* Default paragraph spacing */
+    font-size: 1em; /* Adjust as needed */
+    line-height: 1.7;
+}
+.contact-text-column p:last-child {
+    margin-bottom: 0;
+}
+
+/* New styles for the contact form submit link */
+.form-submit-group {
+    margin-top: 10px; /* Add a little space above the submit link */
+}
+
+.contact-submit-link {
+    display: inline-block; /* Similar to animated-underline-link */
+    text-decoration: none;
+    color: #000000; /* Black text */
+    font-family: 'Cera Pro', sans-serif;
+    font-size: 1.5em; /* ADJUSTED: To match CV link size */
+    font-weight: normal; /* ADJUSTED: To match CV link weight */
+    padding-bottom: 3px; /* Space for underline, from animated-underline-link */
+    position: relative; /* For ::after pseudo-element, from animated-underline-link */
+}
+
+.contact-submit-link i.fas.fa-paper-plane {
+    margin-left: 8px; /* Space between text and icon */
+    font-size: 0.8em; /* ADJUSTED: Icon size relative to new text size */
+}
+
+/* Re-use animated-underline-link ::after styling, ensure it applies */
+.contact-submit-link.animated-underline-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Underline thickness */
+    bottom: 0; /* Position at the bottom of the padding */
+    left: 0;
+    background-color: #000000; /* Underline color */
+    transition: width 0.3s ease-in-out;
+}
+
+.contact-submit-link.animated-underline-link:hover::after {
+    width: 100%;
+}
+
+/* Styles for form rows */
+#contact-form .form-row {
+    display: flex;
+    gap: 20px; /* Space between fields in a row */
+    margin-bottom: 20px; /* Keep existing bottom margin for rows */
+}
+
+#contact-form .form-row .form-group {
+    margin-bottom: 0; /* Remove bottom margin from individual groups in a row */
+    flex-grow: 1; /* Allow groups to grow if needed, basis will control initial size */
+}
+
+#contact-form .form-group-name,
+#contact-form .form-group-topic {
+    flex-basis: 30%; /* 30% width for Name and Topic */
+}
+
+#contact-form .form-group-email,
+#contact-form .form-group-subject {
+    flex-basis: 70%; /* 70% width for Email and Subject */
+}
+
+/* ... potentially other styles ... */
+
+/* New styles for two-column podcast layout & general section heading */
+/* General section heading style - REMOVED as the heading was deleted */
+/*
+.section-heading {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 40px; 
+    font-weight: bold;
+}
+
+.section-heading a.animated-underline-link {
+    color: #000000; 
+    font-size: 1em; 
+}
+*/
+
+.podcast-columns-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; /* Space between columns */
+    margin-top: 30px; /* Space below the main "Podcasts" heading */
+}
+
+.podcast-column {
+    flex: 1; /* Each column takes equal space */
+    text-align: left; /* Align text within columns to the left */
+    background-color: rgba(255, 255, 255, 0.5); /* Optional: slight background to distinguish columns if needed */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.podcast-column .podcast-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #000000; /* Ensure title text is black */
+}
+
+.podcast-column .podcast-description {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.podcast-column .podcast-embed-widget {
+    margin-top: 20px;
+} 

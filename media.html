@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In the Media | Dr. Sonia Kang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="page-container">
+
+        <header id="main-header">
+            <div class="container header-flex-container">
+                <div class="logo-area">
+                    <a href="index.html" class="logo-text">SONIA KANG</a>
+                </div>
+                <nav id="top-menu-nav">
+                    <ul id="top-menu" class="nav">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="lab.html">Lab</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="media.html">Media</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="social-icon-item"><a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a></li>
+                        <li class="social-icon-item"><a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content" class="media-page-main-content">
+            <div class="container page-container">
+                <div class="page-title-wrapper animate-on-scroll">
+                    <span class="page-title-animated-icon">✳</span>
+                    <h1 class="page-title">In the Media</h1>
+                </div>
+                <hr class="section-divider animate-on-scroll">
+                
+                <div class="media-gallery-container animate-on-scroll">
+                    <div class="media-image-item">
+                        <img src="images/media6.jpg" alt="Media highlight 6">
+                        <div class="media-text-overlay">
+                            <h4 class="media-headline">How workplaces are adapting to COVID-19</h4>
+                            <p class="media-subtext">Citytv Breakfast Television | 5 October, 2020</p>
+                            <a href="#" class="media-read-button">Read</a>
+                        </div>
+                    </div>
+                    <div class="media-image-item">
+                        <img src="images/media5.jpg" alt="Media highlight 5">
+                        <div class="media-text-overlay">
+                            <h4 class="media-headline">Want a diverse workplace? Rethink the entire system, experts say</h4>
+                            <p class="media-subtext">CTV News | June 22, 2020</p>
+                            <a href="#" class="media-read-button">Read</a>
+                        </div>
+                    </div>
+                    <div class="media-image-item">
+                        <img src="images/media4.jpg" alt="Media highlight 4">
+                        <div class="media-text-overlay">
+                            <h4 class="media-headline">Systemic racism is a Canadian problem, too</h4>
+                            <p class="media-subtext">TVO | Jun 12, 2020</p>
+                            <a href="#" class="media-read-button">Read</a>
+                        </div>
+                    </div>
+                    <div class="media-image-item">
+                        <img src="images/media3.jpg" alt="Media highlight 3">
+                        <div class="media-text-overlay">
+                            <h4 class="media-headline">What’s the best way to create an inclusive company?</h4>
+                            <p class="media-subtext">The Globe and Mail | March 26, 2020</p>
+                            <a href="#" class="media-read-button">Read</a>
+                        </div>
+                    </div>
+                    <div class="media-image-item">
+                        <img src="images/media2.jpg" alt="Media highlight 2">
+                        <div class="media-text-overlay">
+                            <h4 class="media-headline">The Real Driver of Corporate Diversity</h4>
+                            <p class="media-subtext">The Globe and Mail | February 18, 2020</p>
+                            <a href="#" class="media-read-button">Read</a>
+                        </div>
+                    </div>
+                    <div class="media-image-item">
+                        <img src="images/media1.jpg" alt="Media highlight 1">
+                        <div class="media-text-overlay">
+                            <h4 class="media-headline">Jennifer Lopez is 50. Why are we so obsessed with her age?</h4>
+                            <p class="media-subtext">Global News | February 3, 2020</p>
+                            <a href="#" class="media-read-button">Read</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content for the media page will go here later -->
+            </div>
+        </main>
+
+        <footer id="main-footer">
+            <div class="container footer-flex">
+                <div class="footer-left-content">
+                    <div class="footer-logo-grid">
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo1.png" alt="Logo 1"></a></div>
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo2.png" alt="Logo 2"></a></div>
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo3.jpg" alt="Logo 3"></a></div>
+                        <div class="footer-logo-item"><a href="#"><img src="images/logo4.jpg" alt="Logo 4"></a></div>
+                    </div>
+                </div>
+                <div class="footer-right-content">
+                    <div class="footer-social-icons-right">
+                        <a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p class="copyright animate-on-scroll">&copy; 2025 Sonia Kang</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('main-header');
+            const scrollTrigger = 50; 
+
+            function handleScroll() {
+                if (window.scrollY > scrollTrigger) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            }
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); 
+
+            // Scroll Animation Logic
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            if (animatedElements.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target); 
+                        }
+                    });
+                }, {
+                    threshold: 0.1 
+                });
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
