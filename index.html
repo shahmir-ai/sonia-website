@@ -15,6 +15,9 @@
                 <div class="logo-area">
                     <a href="index.html" class="logo-text">SONIA KANG</a>
                 </div>
+                <button class="mobile-nav-toggle" aria-label="Toggle mobile navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <nav id="top-menu-nav">
                     <ul id="top-menu" class="nav">
                         <li><a href="about.html">About</a></li>
@@ -23,11 +26,9 @@
                         <li><a href="podcast.html">Podcast</a></li>
                         <li><a href="media.html">Media</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li class="social-icon-item"><a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a></li>
                         <li class="social-icon-item"><a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
                     </ul>
                 </nav>
-                <!-- Mobile nav toggle can be added later if needed -->
             </div>
         </header>
 
@@ -142,18 +143,18 @@
                                 For the Love of Work
                             </h3>
                             <p class="podcast-description">
-                                Hosted by Dr. Sonia Kang and made possible by Rogers, this new podcast is a playbook for the modern employee experience, and it could not be more relevant as we redefine the way we work in the wake of a pandemic. Throughout the series you'll hear inspirational and practical advice from experts in the industry, and lessons to help you be your best self at work and beyond.
-                            </p>
+                        Hosted by Dr. Sonia Kang and made possible by Rogers, this new podcast is a playbook for the modern employee experience, and it could not be more relevant as we redefine the way we work in the wake of a pandemic. Throughout the series you'll hear inspirational and practical advice from experts in the industry, and lessons to help you be your best self at work and beyond.
+                    </p>
                             <div class="podcast-embed-widget">
-                                <iframe 
-                                    height="200px" 
-                                    width="100%" 
-                                    frameborder="no" 
-                                    scrolling="no" 
-                                    seamless 
-                                    src="https://player.simplecast.com/d504494a-8b68-4c9b-963c-2e5d34ab9528?dark=false"
-                                    title="For the Love of Work Podcast Player">
-                                </iframe>
+                        <iframe 
+                            height="200px" 
+                            width="100%" 
+                            frameborder="no" 
+                            scrolling="no" 
+                            seamless 
+                            src="https://player.simplecast.com/d504494a-8b68-4c9b-963c-2e5d34ab9528?dark=false"
+                            title="For the Love of Work Podcast Player">
+                        </iframe>
                             </div>
                         </div>
                     </div>
@@ -174,7 +175,6 @@
                 </div>
                 <div class="footer-right-content">
                     <div class="footer-social-icons-right">
-                        <a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
                         <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <p class="copyright animate-on-scroll">&copy; 2025 Sonia Kang</p>
@@ -199,7 +199,38 @@
             window.addEventListener('scroll', handleScroll);
 
             // Initial check in case page is loaded already scrolled down
-            handleScroll(); 
+            handleScroll();
+
+            // Mobile navigation toggle
+            const mobileToggle = document.querySelector('.mobile-nav-toggle');
+            const nav = document.getElementById('top-menu-nav');
+
+            if (mobileToggle && nav) {
+                mobileToggle.addEventListener('click', function() {
+                    nav.classList.toggle('nav-open');
+                    
+                    // Change icon
+                    const icon = this.querySelector('i');
+                    if (nav.classList.contains('nav-open')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+
+                // Close mobile nav when clicking on nav links
+                const navLinks = nav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        nav.classList.remove('nav-open');
+                        const icon = mobileToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    });
+                });
+            } 
         });
     </script>
     <script>
@@ -208,17 +239,24 @@
             if (!track) return; // Exit if carousel elements aren't found
 
             const items = Array.from(track.children);
-            const itemWidth = items[0].getBoundingClientRect().width;
             const viewport = document.querySelector('.publications-carousel-viewport');
             const prevButton = document.querySelector('.selected-publications-section .prev-arrow');
             const nextButton = document.querySelector('.selected-publications-section .next-arrow');
             
             let currentIndex = 0;
-            const itemsToShow = 2; // Number of items visible at once
             const totalItems = items.length;
+
+            // Function to get current layout info
+            function getLayoutInfo() {
+                const isMobile = window.innerWidth <= 767;
+                const itemsToShow = isMobile ? 1 : 2;
+                const itemWidth = items[0].getBoundingClientRect().width;
+                return { isMobile, itemsToShow, itemWidth };
+            }
 
             // Function to move the track
             function moveToSlide(index) {
+                const { itemWidth } = getLayoutInfo();
                 track.style.transform = 'translateX(-' + (index * itemWidth) + 'px)';
                 currentIndex = index;
                 updateArrowStates();
@@ -227,6 +265,7 @@
             // Update arrow disabled states
             function updateArrowStates() {
                 if (!prevButton || !nextButton) return;
+                const { itemsToShow } = getLayoutInfo();
                 prevButton.disabled = currentIndex === 0;
                 nextButton.disabled = currentIndex >= totalItems - itemsToShow;
             }
@@ -234,6 +273,7 @@
             // Event listeners for arrows
             if (nextButton) {
                 nextButton.addEventListener('click', () => {
+                    const { itemsToShow } = getLayoutInfo();
                     if (currentIndex < totalItems - itemsToShow) {
                         moveToSlide(currentIndex + 1);
                     }
@@ -248,10 +288,14 @@
                 });
             }
 
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                // Reset to first item on resize to avoid layout issues
+                currentIndex = 0;
+                moveToSlide(0);
+            });
+
             // Initial setup
-            // Set track width explicitly to handle all items (though viewport clips)
-            // track.style.width = (itemWidth * totalItems) + 'px'; 
-            // Commenting out for now, flex properties should handle width. Let's see if it's needed.
             updateArrowStates();
 
             // Optional: Recalculate on resize if layout is very fluid
