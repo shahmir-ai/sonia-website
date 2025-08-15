@@ -92,7 +92,7 @@ ul {
 }
 
 #main-header.header-scrolled {
-    background-color: #FFFFFF; /* Becomes white on scroll */
+    background-color: rgba(255, 255, 255, 0.95); /* Becomes white on scroll */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
 }
 
@@ -217,6 +217,10 @@ ul {
     color: #D95A44; /* Link hover color */
 }
 
+#top-menu .social-icon-item a:hover .fa-orcid {
+    color: #A6CE39 !important;
+}
+
 /* Add hover trigger for nav link underline animation (excluding social icons) */
 #top-menu-nav ul li:not(.social-icon-item) a:hover::after {
     width: 100%;
@@ -231,14 +235,14 @@ ul {
     padding-right: 0;
     display: flex;
     align-items: flex-end; /* Align items to the bottom of the flex container */
-    min-height: 72vh; /* INCREASED height by 20% */
+    min-height: 55vh; /* REDUCED height to bring content up */
 }
 
 .hero-section-hb .container.hero-content-flex {
     display: flex;
     gap: 50px; 
     max-width: 1200px; /* Wider container */
-    margin-left: 5vw; /* Move block to the left */
+    margin-left: 12vw; /* Nudge slightly to the left */
     margin-right: auto; /* Adjust right margin automatically */
     /* It still inherits padding: 0 15px from .container */
 }
@@ -739,11 +743,10 @@ ul {
 }
 
 .footer-social-icons-right a {
-    /* color: #000000; */ /* Black icon color - OLD */
-    color: #333333; /* Dark gray icon color */
-    font-size: 1.5em; /* Icon size */
-    margin-left: 15px; /* Space between icons */
-    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    color: #767676; /* Lighter gray for consistency */
+    transition: color 0.3s ease;
 }
 
 .footer-social-icons-right a:first-child {
@@ -754,11 +757,27 @@ ul {
     color: #D95A44; /* Link hover color from site */
 }
 
+.footer-social-icons-right a:hover .fa-linkedin-in {
+    color: #0B65C2;
+}
+
+.footer-social-icons-right a:hover .fa-orcid {
+    color: #A6CE39;
+}
+
+.footer-social-icons-right a:hover .fa-graduation-cap {
+    color: #4285F4;
+}
+
+.footer-social-icons-right a:hover .social-icon-img {
+    filter: grayscale(0%);
+}
+
 .copyright {
     margin: 0;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     /* color: #000000; */ /* Black copyright text - OLD */
-    color: #555555; /* Medium gray for copyright on white */
+    color: #666; /* Medium gray for copyright on white */
 }
 
 /* Scroll Animation Utilities */
@@ -1109,14 +1128,25 @@ ul {
         padding: 30px 0;
     }
     
+    .footer-right-content {
+        text-align: center; /* Center copyright text on mobile */
+    }
+    
     .footer-logo-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
         gap: 15px;
-        margin-bottom: 5px;
+        margin-bottom: 25px; /* Increase space between logos and social icons */
     }
     
-    .footer-social-icons-right {
-        margin-bottom: 15px;
+    /* Make footer social icons colored by default on mobile */
+    .footer-social-icons-right a .social-icon-img {
+        filter: grayscale(0%);
+    }
+    .footer-social-icons-right a .fa-linkedin-in {
+        color: #0B65C2;
+    }
+    .footer-social-icons-right a .fa-orcid {
+        color: #A6CE39;
     }
     
     .copyright {
@@ -1136,9 +1166,7 @@ ul {
     }
 
     /* Hide footer LinkedIn icon on mobile */
-    .footer-social-icons-right {
-        display: none;
-    }
+    /* This rule is no longer needed and will be removed */
 
     body {
         padding-top: 80px; /* Match header height */
@@ -1483,18 +1511,24 @@ img {
 }
 
 .publication-actions {
-    flex: 0 0 auto; 
-    display: grid; 
-    grid-template-columns: repeat(2, auto); 
-    grid-template-rows: repeat(2, auto);    
-    align-items: center; 
-    justify-items: center; 
-    column-gap: 8px; /* Horizontal gap */
-    row-gap: 4px;    /* Vertical gap - REDUCED */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 94px;
+    flex-shrink: 0;
+    min-height: 94px; /* Ensure consistent height for alignment */
+    align-content: center; /* Center grid items vertically */
+}
+
+.publication-entry.other .publication-actions,
+.publication-entry.books-chapters .publication-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .action-btn {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 40px;  /* INCREASED SIZE */
@@ -1506,6 +1540,7 @@ img {
     text-decoration: none;
     /* font-size will be overridden by img if using img tags */
     transition: all 0.3s ease;
+    position: relative; /* For tooltip */
 }
 
 .action-btn img {
@@ -1642,13 +1677,14 @@ img {
     }
     
     .publication-actions { 
+        display: grid; /* Ensure grid is re-established */
         grid-template-columns: repeat(4, auto); /* Change to 1 row of 4 icons */
         grid-template-rows: 1fr; /* Single row */
-        column-gap: 12px; /* More spacing between icons */
-        row-gap: 0; /* No row gap needed */
-        padding-top: 0;
+        gap: 12px; /* Use gap for spacing */
+        padding: 15px 0; /* Add balanced vertical padding */
         width: fit-content; /* Shrink container to fit icons */
         margin: 0 auto; /* Center the action container */
+        min-height: auto; /* Override desktop min-height */
     }
     
     /* Make action buttons larger on mobile */
@@ -2033,10 +2069,47 @@ img {
     display: block;
 }
 
+.modal-header-with-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
 .team-member-modal h3 {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.8em;
+}
+
+.modal-header-with-link h3 {
+    margin: 0;
+}
+
+.modal-link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #6c757d;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.modal-link-btn:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+    color: #495057;
+}
+
+.modal-link-btn:hover .fa-linkedin-in {
+    color: #0B65C2;
 }
 
 .team-member-modal h4 {
@@ -2679,4 +2752,314 @@ img {
     .publication-item {
         min-width: 320px;
     }
+}
+
+@media (min-width: 768px) {
+  /* Desktop/tablet: show carousel, hide mobile fallback */
+  .media-carousel-container { display: block; }
+  .media-mobile-fallback { display: none; }
+}
+
+/* ... existing code ... */
+.media-read-button:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.media-image-item:hover .media-subtext { /* Styles for subtext on hover */
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide to final position */
+    margin-bottom: 15px; /* Restore margin-bottom on hover */
+    max-height: 5em; /* ADDED: Expand to fit content */
+}
+
+/* New Styles for Media Page v2 */
+.media-page-v2 .featured-media-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.media-page-v2 .media-gallery-container {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.media-page-v2 .media-image-item.media-wide-item {
+    grid-column: span 1; /* Override wide item to be a single column */
+}
+
+.media-page-v2 .featured-media-container .media-image-item img {
+    aspect-ratio: 460 / 320; /* Reduced height by ~30% */
+}
+
+/* Podcast Page Specific Styles */
+.podcast-page-main-content .page-container {
+    padding-top: 20px; /* Adjusted from 40px to reduce space after main title */
+    padding-bottom: 60px;
+}
+
+/* ... existing code ... */
+.media-page-v2 .featured-media-container .media-image-item img {
+    aspect-ratio: 460 / 320; /* Reduced height by ~30% */
+}
+
+/* New Styles for Media Page v3 (Carousel) */
+.media-page-v3 {
+    overflow: hidden;
+}
+
+.media-carousel-container {
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.media-carousel-row-v3 {
+    display: flex;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.media-carousel-row-v3:hover {
+    animation-play-state: paused;
+}
+
+.media-carousel-slide-v3 {
+    display: flex;
+    gap: 20px;
+    padding-right: 20px;
+}
+
+.media-carousel-row-v3 .media-image-item {
+    flex-shrink: 0;
+    width: 300px;
+    height: 220px; /* Set a fixed height for all items */
+}
+
+.media-carousel-row-v3 .media-item-wide-v3 {
+    width: 450px; /* 1.5x the width of regular items */
+}
+
+.media-carousel-row-v3 .media-image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.scroll-left {
+    animation: scroll-left 40s linear infinite;
+}
+
+.scroll-right {
+    animation: scroll-right 40s linear infinite;
+}
+
+@keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+
+/* Podcast Page Specific Styles */
+.podcast-page-main-content .page-container {
+    padding-top: 20px; /* Adjusted from 40px to reduce space after main title */
+    padding-bottom: 60px;
+}
+
+.media-page-v3 .media-item-wide-v3 {
+    width: 450px;
+}
+
+/* About page CV link arrow: drop/replace animation */
+.about-cv-link .highlight-icon {
+    position: relative;
+    width: 1em;
+    height: 1em;
+    overflow: hidden; /* Hide moving arrows outside the box */
+}
+
+/* Hide the original <i> so we can draw arrows with ::before/::after */
+.about-cv-link .highlight-icon i {
+    opacity: 0;
+}
+
+/* Cancel the generic spin on hover/scroll for this specific icon */
+.about-cv-link:hover .highlight-icon,
+.about-cv-link.is-visible .highlight-icon {
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Build two stacked arrows that cycle on hover */
+.about-cv-link .highlight-icon::before,
+.about-cv-link .highlight-icon::after {
+    content: "\f063"; /* Font Awesome down arrow */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900; /* Solid */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    color: currentColor;
+    line-height: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* play once and reverse */
+}
+
+/* Default positions: one visible, one staged above */
+.about-cv-link .highlight-icon::before {
+    top: 0; /* centered by translateX only, Y is 0 (visible) */
+}
+
+.about-cv-link .highlight-icon::after {
+    top: 0;
+    transform: translateX(-50%) translateY(-120%); /* above the box */
+    opacity: 0;
+}
+
+/* On hover, move current arrow down and bring new one from above */
+.about-cv-link:hover .highlight-icon::before {
+    transform: translateX(-50%) translateY(120%);
+    opacity: 0;
+}
+
+.about-cv-link:hover .highlight-icon::after {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* Media hybrid: mobile fallback vs desktop carousel */
+@media (max-width: 767px) {
+  /* Hide carousel on mobile */
+  .media-carousel-container { display: none; }
+  /* Show static fallback on mobile */
+  .media-mobile-fallback { display: block; }
+  .media-mobile-fallback .media-image-item { margin-bottom: 20px; }
+}
+
+@media (min-width: 768px) {
+  /* Desktop/tablet: show carousel, hide mobile fallback */
+  .media-carousel-container { display: block; }
+  .media-mobile-fallback { display: none; }
+}
+
+@media (min-width: 768px) {
+  /* Align carousel side spacing with static section */
+  .media-page-v3 .media-carousel-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden; /* prevent rows from sliding under the gutters */
+  }
+}
+
+@media (min-width: 768px) {
+  /* Fixed, container-based fade with wider feather for softer edge */
+  .media-page-v3 .media-carousel-container {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    --carousel-fade-width: 48px; /* was 24px; increase for gentler fade */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      rgba(0,0,0,0) 0,
+      rgba(0,0,0,1) var(--carousel-fade-width),
+      rgba(0,0,0,1) calc(100% - var(--carousel-fade-width)),
+      rgba(0,0,0,0) 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      rgba(0,0,0,0) 0,
+      rgba(0,0,0,1) var(--carousel-fade-width),
+      rgba(0,0,0,1) calc(100% - var(--carousel-fade-width)),
+      rgba(0,0,0,0) 100%
+    );
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+  .media-page-v3 .media-carousel-row-v3 {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+}
+
+.publication-actions .action-btn img {
+    height: 22px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.publication-actions .action-btn-wide {
+    width: calc(50% - 5px); /* Two buttons wide with gap */
+    text-align: center;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px; /* Match icon button height */
+}
+
+
+.publication-actions .action-btn:hover img {
+    transform: scale(1.1);
+}
+
+.publication-actions .action-btn-wide:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* Specific styles for Books & Chapters */
+.publication-entry.books-chapters .publication-content h4 {
+    .publication-actions .action-btn {
+        margin: 0 5px;
+    }
+
+    .publication-entry.other .publication-actions {
+        padding-bottom: 0;
+    }
+
+    .publication-divider {
+        display: block;
+        height: 1px;
+        margin: 15px 0;
+        background-color: #f0f0f0 !important; /* Keep for visibility */
+        flex-basis: 1px;
+    }
+}
+
+.social-icon-img {
+    width: 1.2rem; /* Match the size of the font icons */
+    height: 1.2rem;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.footer-social-icons-right a:hover .fa-linkedin-in {
+    color: #0B65C2;
+}
+
+.footer-social-icons-right a:hover .fa-orcid {
+    color: #A6CE39;
+}
+
+.footer-social-icons-right a:hover .social-icon-img {
+    filter: grayscale(0%);
+}
+
+.copyright {
+    color: #666;
+    font-size: 0.9rem;
 }

@@ -26,7 +26,6 @@
                         <li><a href="podcast.html">Podcast</a></li>
                         <li><a href="media.html">Media</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li class="social-icon-item"><a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
                     </ul>
                 </nav>
             </div>
@@ -46,41 +45,55 @@
                     
                     <div class="contact-form-container">
                         <form action="#" method="POST" id="contact-form">
+                            <!-- Web3Forms required/public key -->
+                            <input type="hidden" name="access_key" value="6bb8a14d-8f78-4e96-9c73-9fbf71c8a604">
+                            <!-- Will be set by JS to: [Topic Label] Subject -->
+                            <input type="hidden" name="subject" id="wf-subject" value="">
+                            <!-- From name shown in notification email -->
+                            <input type="hidden" name="from_name" value="Sonia Kang | Contact Form">
+                            <!-- Reply-To (will default to email, but set explicitly via JS) -->
+                            <input type="hidden" name="replyto" id="wf-replyto" value="">
+                            <!-- Honeypot (should remain unchecked) -->
+                            <input type="checkbox" name="botcheck" id="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
                             <div class="form-row">
                                 <div class="form-group form-group-name">
                                     <label for="name">Name</label>
-                                    <input type="text" id="name" name="name" required>
+                                    <input type="text" id="name" name="Name" required>
                                 </div>
                                 <div class="form-group form-group-email">
                                     <label for="email">Email Address</label>
-                                    <input type="email" id="email" name="email" required>
+                                    <input type="email" id="email" name="Email" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group form-group-topic">
                                     <label for="topic">Topic</label>
-                                    <select id="topic" name="topic" required>
+                                    <select id="topic" name="Topic" required>
                                         <option value="" disabled selected>Select a topic...</option>
-                                        <option value="media_inquiry">Media Inquiry</option>
-                                        <option value="consulting_opportunity">Consulting Opportunity</option>
-                                        <option value="speaking_engagement">Speaking Engagement</option>
-                                        <option value="other">Other</option>
+                                        <option value="Media Inquiry">Media Inquiry</option>
+                                        <option value="Consulting Opportunity">Consulting Opportunity</option>
+                                        <option value="Speaking Engagement">Speaking Engagement</option>
+                                        <option value="Joining the Lab">Joining the Lab</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                 </div>
                                 <div class="form-group form-group-subject">
                                     <label for="subject">Subject</label>
-                                    <input type="text" id="subject" name="subject" required>
+                                    <input type="text" id="subject" name="Subject" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="6" required></textarea>
+                                <textarea id="message" name="Message" rows="6" required></textarea>
                             </div>
                             <div class="form-group form-submit-group">
-                                <a href="#" class="contact-submit-link animated-underline-link">
+                                <button type="submit" class="contact-submit-link animated-underline-link" style="border:none; background:none; padding:0; cursor:pointer;">
                                     Send Message >
-                                </a>
+                                </button>
                             </div>
+                            <!-- Better success/error UI -->
+                            <div id="form-result" class="form-alert" aria-live="polite" role="status" style="display:none;"></div>
                         </form>
                     </div>
                 </div>
@@ -92,15 +105,17 @@
             <div class="container footer-flex">
                 <div class="footer-left-content">
                     <div class="footer-logo-grid">
-                        <div class="footer-logo-item"><a href="#"><img src="images/logo1.png" alt="Logo 1"></a></div>
-                        <div class="footer-logo-item"><a href="#"><img src="images/logo2.png" alt="Logo 2"></a></div>
-                        <div class="footer-logo-item"><a href="#"><img src="images/logo3.jpg" alt="Logo 3"></a></div>
-                        <div class="footer-logo-item"><a href="#"><img src="images/logo4.jpg" alt="Logo 4"></a></div>
+                        <div class="footer-logo-item"><a href="https://www.rotman.utoronto.ca/"><img src="images/logo1.png" alt="Logo 1"></a></div>
+                        <div class="footer-logo-item"><a href="https://www.utoronto.ca/"><img src="images/logo2.png" alt="Logo 2"></a></div>
+                        <div class="footer-logo-item"><a href="https://www.gendereconomy.org/"><img src="images/logo3.jpg" alt="Logo 3"></a></div>
+                        <div class="footer-logo-item"><a href="https://www.rotman.utoronto.ca/faculty-and-research/research-centres/behavioural-economics-in-action-at-rotman/"><img src="images/logo4.jpg" alt="Logo 4"></a></div>
                     </div>
                 </div>
                 <div class="footer-right-content">
                     <div class="footer-social-icons-right">
-                        <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://scholar.google.com/citations?user=AYjR5XIAAAAJ" aria-label="Google Scholar Profile"><img src="images/scholar.png" alt="Google Scholar icon" class="social-icon-img"></a>
+                        <a href="https://www.linkedin.com/in/sonia-kang-bba669159/" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://orcid.org/0009-0001-8429-3378" aria-label="ORCID Profile"><i class="fab fa-orcid"></i></a>
                     </div>
                     <p class="copyright animate-on-scroll">&copy; 2025 Sonia Kang</p>
                 </div>
@@ -178,10 +193,76 @@
             observer.observe(el);
         });
 
+        // Web3Forms inline submission (stay on page)
+        (function() {
+            const form = document.getElementById('contact-form');
+            const result = document.getElementById('form-result');
+            if (!form) return;
 
+            function buildSubject() {
+                const topicSelect = document.getElementById('topic');
+                const topicLabel = topicSelect.options[topicSelect.selectedIndex]?.text || 'General';
+                const userSubj = document.getElementById('subject').value.trim();
+                return `[${topicLabel}] ${userSubj}`.trim();
+            }
 
-        // Any other page-specific JS for contact.html (if needed in the future)
-        // For now, the form is a dud.
+            function showSuccess(message) {
+                result.className = 'form-alert form-alert--success';
+                result.style.display = 'flex';
+                result.style.gap = '8px';
+                result.innerHTML = `<span class="form-alert__icon" aria-hidden="true">✔</span><span>${message}</span>`;
+                result.focus();
+            }
+
+            function showError(message) {
+                result.className = 'form-alert form-alert--error';
+                result.style.display = 'block';
+                result.innerText = message;
+                result.focus();
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // stop browser POST to contact.html (405)
+
+                // Honeypot quick check
+                const bot = document.getElementById('botcheck');
+                if (bot && bot.checked) return;
+
+                // Fill hidden fields for Web3Forms
+                const wfSubject = document.getElementById('wf-subject');
+                const wfReplyTo = document.getElementById('wf-replyto');
+                const emailEl = document.getElementById('email');
+                wfSubject.value = buildSubject();
+                wfReplyTo.value = (emailEl?.value || '').trim();
+
+                const formData = new FormData(form);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                // No 'please wait' message
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    const data = await response.json();
+                    if (response.status === 200) {
+                        showSuccess('Message sent. Thank you!');
+                        form.reset();
+                    } else {
+                        showError(data.message || 'Something went wrong. Please try again later.');
+                    }
+                })
+                .catch(() => {
+                    showError('Something went wrong. Please try again later.');
+                });
+            });
+        })();
 
     </script>
 </body>
