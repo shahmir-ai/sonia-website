@@ -92,7 +92,7 @@ ul {
 }
 
 #main-header.header-scrolled {
-    background-color: rgba(255, 255, 255, 0.95); /* Becomes white on scroll */
+    background-color: rgba(255, 255, 255); /* Becomes white on scroll */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
 }
 
@@ -1586,6 +1586,42 @@ img {
 
 .action-btn:active {
     transform: translateY(0);
+}
+
+.action-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    position: relative; /* For positioning the pseudo-element */
+}
+
+.action-btn.disabled::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 120%;
+    height: 2px;
+    background-color: red;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    z-index: 1; /* Ensure the line is on top of the image */
+}
+
+.action-btn:hover {
+    background-color: #D2C8BA;
+    border-color: #D2C8BA;
+    transform: translateY(-2px);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+}
+
+.action-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 /* END NEW APPROACH: INNER FLEX WRAPPER (LESS AGGRESSIVE) */
 
