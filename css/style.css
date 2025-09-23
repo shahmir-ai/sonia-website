@@ -2410,6 +2410,15 @@ img {
     padding-bottom: 60px;
 }
 
+/* Full-width feature image between podcast sections */
+.podcast-feature-image {
+    padding: 0 15px; /* Match section horizontal padding */
+    margin: 20px 0; /* Space around image */
+}
+.podcast-feature-image .image-outline-wrapper {
+    width: 100%;
+}
+
 .podcast-entry-section {
     margin-bottom: 50px; /* Space below each podcast entry, before the next divider or footer */
     padding: 0 15px; /* Add some horizontal padding if container doesn't provide enough */
@@ -2974,6 +2983,17 @@ img {
   /* Show static fallback on mobile */
   .media-mobile-fallback { display: block; }
   .media-mobile-fallback .media-image-item { margin-bottom: 20px; }
+  /* Make entire media card clickable on mobile */
+  .media-image-item .mobile-card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5; /* Above overlays and hidden button */
+    text-indent: -9999px; /* Hide text if any */
+    overflow: hidden;
+  }
 }
 
 @media (min-width: 768px) {
